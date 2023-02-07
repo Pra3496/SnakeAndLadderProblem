@@ -15,9 +15,6 @@
             int opt = 0;       // options
             int winCnt = 0;
 
-
-            Console.WriteLine("_______| Welcome! to Snake and Ladder Game |_______\n");
-
             Random random = new Random();       //Creating object random
 
             Random random1 = new Random();      //Creating object random
