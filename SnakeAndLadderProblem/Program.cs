@@ -37,7 +37,7 @@
                     Console.WriteLine("The player stay at same place : " + pos);
                     break;
             }
-            
+
 
         }
     }
