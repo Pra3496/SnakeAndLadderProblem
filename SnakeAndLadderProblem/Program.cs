@@ -15,32 +15,47 @@
             int opt = 0;       // options
 
 
-            Random random = new Random();       //Creating object random
-            dice = random.Next(1, 7);       // Using random method 
-            Console.WriteLine("The postition of player starts: {0} and random number of Dice: {1}\n", pos, dice);
 
+            Random random = new Random();       //Creating object random
 
             Random random1 = new Random();      //Creating object random
-            opt = random1.Next(1, 4);        //Using random method
 
-            switch (opt)         //Checking for options using switch case
+            Console.WriteLine("\nThe postition of player starts: {0} and random number of Dice: {1}\n\n", pos, dice);
+
+
+            while (pos < 100)
             {
-                case 1:
-                    pos = pos + dice;
-                    Console.WriteLine("The player moves ahead by number Dice value : " + pos);
-                    break;
-                case 2:
-                    pos = pos - dice;
-                    Console.WriteLine("The player moves behind by number Dice value : " + pos);
-                    break;
-                default:
-                    Console.WriteLine("The player stay at same place : " + pos);
-                    break;
+                dice = random.Next(1, 7); // Using random method 
+                opt = random1.Next(1, 4); //Using random method
+
+                switch (opt)         //Checking for options using switch case
+                {
+                    case 1:
+                        pos = pos + dice;
+
+                        if (pos > 100)
+                        {
+                            pos = 100;
+                        }
+                        Console.WriteLine("\nThe player moves ahead by number Dice value : " + pos);
+                        break;
+                    case 2:
+                        pos = pos - dice;
+                        if (pos < 0)
+                        {
+                            pos = 0;
+                        }
+                        Console.WriteLine("\nThe player moves behind by number Dice value : " + pos);
+                        break;
+                    default:
+                        Console.WriteLine("\nThe player stay at same place : " + pos);
+                        break;
+                }
+
+
+
             }
-
-
         }
-    }
 }
 
 
